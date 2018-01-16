@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ns1="com.idurdyev.idcommerce:MessageInfo:1.0"
+    targetNamespace="http://schemas.xmlsoap.org/soap/envelope/">
+    <xs:import namespace="com.idurdyev.idcommerce:MessageInfo:1.0" schemaLocation="MessageInfo.xsd"/>
+    <xs:element name="Envelope">
+        <xs:annotation>
+            <xs:documentation>The main Envelope convert</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Header" type="env:HeaderType" nillable="false" />
+                <xs:element name="Body" type="env:BodyType" nillable="false"/>
+            </xs:sequence>
+        </xs:complexType>        
+    </xs:element>
+    <xs:complexType name="HeaderType">
+        <xs:sequence>            
+            <xs:element ref="ns1:MessageInfo"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="BodyType">
+        <xs:sequence>
+            <xs:any namespace="##any" minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

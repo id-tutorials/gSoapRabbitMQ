@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="com.idurdyev.idcommerce:CommonTypes:1.0" version="1.0"
+    xmlns:ns1="com.idurdyev.idcommerce:CommonTypes:1.0"
+    xmlns:ns2="com.idurdyev.idcommerce:MessageInfo:1.0">
+    <xs:complexType name="EnvelopeIDType">
+        <xs:simpleContent>
+            <xs:annotation>
+                <xs:documentation>Envelope id maximum 32 chars, string</xs:documentation>
+            </xs:annotation>
+            <xs:extension base="ns1:StringUp32Min32Type"></xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="MessageCodeType">
+        <xs:simpleContent>
+            <xs:annotation>
+                <xs:documentation>Message code type, minimum 10 chars</xs:documentation>
+            </xs:annotation>
+            <xs:extension base="ns1:String10Min10Type" />
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:simpleType name="StringUp32Type">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="32"/>
+            <xs:pattern value="[A-Z]+" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="StringUp32Min32Type">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="32"/>
+            <xs:minLength value="32"/>
+            <xs:pattern value="[A-Z]+" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="String10Min10Type">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="10" />
+            <xs:minLength value="10" />
+            <xs:pattern value="[A-Z0-9]+" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="String100Type">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="100" />
+            <xs:minLength value="1" />
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

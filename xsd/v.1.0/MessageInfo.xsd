@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    targetNamespace="com.idurdyev.idcommerce:MessageInfo:1.0" version="1.0"
+    xmlns:ns1="com.idurdyev.idcommerce:CommonTypes:1.0"
+    xmlns:ns2="com.idurdyev.idcommerce:MessageInfo:1.0">
+    <xs:annotation>
+        <xs:documentation>This is basic Message info type, contains message ids and message code</xs:documentation>
+    </xs:annotation>
+    <xs:import namespace="com.idurdyev.idcommerce:CommonTypes:1.0" schemaLocation="CommonTypes.xsd"/>
+    <xs:element name="MessageInfo">
+        <xs:annotation>
+            <xs:documentation>Information about this message, envelopeid, refid, message code</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:annotation>
+                <xs:documentation>Information about this message, envelopeid, refid, message code</xs:documentation>
+            </xs:annotation>
+            <xs:sequence>
+                <xs:element name="EnvelopeID" nillable="false" type="ns1:EnvelopeIDType">
+                    <xs:annotation>
+                        <xs:documentation>This is message id unique identifier</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="RefEnvelopeID" nillable="true" type="ns1:EnvelopeIDType">
+                    <xs:annotation>
+                        <xs:documentation>This is reference to initial message id</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element name="MessageCode" nillable="false" type="ns1:MessageCodeType">
+                    <xs:annotation>
+                        <xs:documentation>This is message code</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>        
+    </xs:element>
+</xs:schema>

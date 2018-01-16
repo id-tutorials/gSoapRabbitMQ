@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<env:Envelope xmlns:ns1="com.idurdyev.idcommerce:CommonTypes:1.0"
+              xmlns:ns2="com.idurdyev.idcommerce:MessageInfo:1.0"
+              xmlns:env="http://schemas.xmlsoap.org/soap/envelope/"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Header>
+        <ns2:MessageInfo>
+            <ns2:EnvelopeID>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</ns2:EnvelopeID>
+            <ns2:RefEnvelopeID>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</ns2:RefEnvelopeID>
+            <ns2:MessageCode>0000000000</ns2:MessageCode>
+        </ns2:MessageInfo>
+    </Header>
+    <Body>
+        <ns1:ParseKeywords xmlns:ns1="com.idurdyev.idcommerce:ParseKeywords:1.0"
+                           xmlns:ns0="com.idurdyev.idcommerce:CommonTypes:1.0"
+                           xmlns:ns2="com.idurdyev.idcommerce:MessageInfo:1.0"
+                           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns1:Keyword>Keyword0</ns1:Keyword>
+            <ns1:Keyword>Keyword1</ns1:Keyword>
+        </ns1:ParseKeywords>
+    </Body>
+</env:Envelope>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns:ns1="com.idurdyev.idcommerce:ParseKeywords:1.0"
+    xmlns:ns2="com.idurdyev.idcommerce:CommonTypes:1.0"
+    targetNamespace="com.idurdyev.idcommerce:ParseKeywords:1.0" elementFormDefault="qualified" version="1.0">
+    <xs:import namespace="com.idurdyev.idcommerce:CommonTypes:1.0" schemaLocation="CommonTypes.xsd"/>
+    <xs:element name="ParseKeywords">
+        <xs:annotation>
+            <xs:documentation>ParseKeywords message, contains keywords</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Keyword" type="ns1:KeywordType" maxOccurs="unbounded" minOccurs="1">
+                    <xs:annotation>
+                        <xs:documentation>Keyword, string with maximum 100 chars</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>        
+    </xs:element>
+    <xs:complexType name="KeywordType">
+        <xs:simpleContent>
+            <xs:annotation>
+                <xs:documentation>Keyword type string with maximum 100 chars</xs:documentation>
+            </xs:annotation>
+            <xs:extension base="ns2:String100Type"/>
+        </xs:simpleContent>
+    </xs:complexType>
+</xs:schema>
